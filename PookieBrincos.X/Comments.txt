@@ -1,0 +1,72 @@
+/*
+ RPO = 0/1; SELECT MEMORY BANK 0 OR 1
+ 
+ * TRISIO/STATUS/OPTION_REG ESTAO NO BANK 1
+ 
+ * GPIO{0:5}
+ * TRISIO{0:5}
+ * SE TRISIOX = 1 ? INPUT
+ * =0 ? OUTPUT
+ * 
+ * ANSEL<3:0> CONTROLA O DIGITAL GATE POR ASSIM DIZER
+ * SE = 1 ESTAMOS EM INPUT ANALOGICO
+ * SE = 0 ESTAMOS EM INPUT DIGITAL
+ * 
+ * HA 4 CANAIS ANALOGICOS
+ * AN<0:3> QUE SAO ESCOLHIDOS COM CHS1 E CHS0
+ * OU SEJA (00) AN0, (01) AN1, (10) AN2, (11) AN3
+ * 
+ * PODEMOS TER UMA TENSAO DE REFERENCIA EXTERNA
+ *VCFG = 0, VDD, VCFG = 1, EXT, NO PIN GP1
+ 
+ * 
+ * PARA COMECAR O ADC FAZEMOS GO/DONE = 1 E QUANDO ACABAR FICA =0
+ * 
+ * O RESULTADO VAI PARA ADRESH E ADRESL
+ * SE ADFM = 0
+ * H(MSB-----LSBXXXX)L
+ * SE ADFM = 1
+ * H(XXXMSB----LSB)L
+ * 
+ * EM GERAL IREMOS USAR ADFM=1
+ * OU SEJA O NOSSO RESULTADO SERA 2 BITS DE H E L
+ * ENTAO H*256 + L
+ * 
+ * 
+ * 
+ * 
+ * PARA O TIMER0
+ * 
+ * 
+ * TEMOS DE PREPARAR OS OPTION_REG
+ * 
+ * T0CS = 0; PARA INCREMENTAR COM CADA INSTRUCTION CYCLE
+ * 
+ * O VALOR DO CLOCK TA EM TMR0
+ * MELHOR DAR CLEAR COM CADA BOOT PQ ELE NAO DA WIPE POR RESET
+ * 
+ */
+
+
+
+//void LEDControl(int intensity) {
+//    //intensity = PWM DUTY CYCLE
+//    
+//    int segundos = 10;
+//    int intervalo = segundos * 10000;
+//    
+//    for(int i = 0; i <= intervalo; i++){
+//    GPIO5 = 1;
+//    GPIO1 = 1;
+//    for(int j = 0; j <= intensity; j++){
+//    __delay_us(1);}
+//    
+//    GPIO5 = 0;
+//    GPIO1 = 0;
+//    for(int z = 0; z <= 100 - intensity; z++){
+//    __delay_us(1);}
+//    
+//    }
+//
+//}
+
