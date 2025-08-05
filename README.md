@@ -1,3 +1,9 @@
+[PIC code](PookieBrincos.X) 
+[KICAD FILES](Miau.zip)
+
+![3D RENDER](KICAD3D.png)
+
+
 This project was started by my girlfriend in a simple workshop I gave about designing PCBs in KiCad and then programming a PIC.
 
 The circuit is super simple, and maybe wouldnt even need an MCU, but the idea was that the projects in this workshop were simple and not very complex.
